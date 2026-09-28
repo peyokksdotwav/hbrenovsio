@@ -1,0 +1,531 @@
+:root {
+    --brunFonce: #2b2019;
+    --brunBois: #a9713f;
+    --brunBoisClair: #c98f57;
+    --vertMousse: #6d7a5b;
+    --vertMousseFonce: #57624a;
+    --creme: #f7f3ec;
+    --creme2: #efe8db;
+    --texte: #2a231c;
+    --texteClair: #f7f3ec;
+    --bordure: #e0d6c4;
+    --policeTitre: Georgia, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", serif;
+    --policeTexte: "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: var(--policeTexte);
+    color: var(--texte);
+    background: var(--creme);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    transition: all 0.2s ease-out;
+}
+
+a {
+    color: var(--brunBois);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+h1,
+h2,
+h3 {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 700;
+    line-height: 1.5;
+    width: 100%;
+    white-space: nowrap;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.enveloppe {
+    width: min(74rem, 92%);
+    margin-inline: auto;
+}
+
+
+.entete {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 0.6rem 1.5rem;
+    background: var(--creme);
+    border-bottom: 1px solid var(--bordure);
+}
+
+.entete .logo {
+    height: 3rem;
+    width: auto;
+}
+
+.menuPrincipal ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+}
+
+.menuPrincipal a {
+    display: inline-block;
+    padding: 0.6rem 0.9rem;
+    color: var(--texte);
+    font-size: 0.98rem;
+    border-radius: 3px;
+}
+
+.menuPrincipal a:hover {
+    background: var(--creme2);
+    text-decoration: none;
+}
+
+.menuPrincipal a.actif {
+    background: var(--brunFonce);
+    color: var(--texteClair);
+}
+
+
+
+.hero {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    min-height: 46vh;
+    display: flex;
+    align-items: flex-end;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, rgba(20, 14, 9, 0.72) 0%, rgba(20, 14, 9, 0.15) 60%);
+}
+
+.hero h1 {
+    position: relative;
+    color: var(--texteClair);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    padding: 3rem;
+    max-width: 46rem;
+    place-content: center;
+    text-align: center;
+}
+
+.hero realisation {
+    position: relative;
+    color: var(--texteClair);
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    padding: 2rem;
+    max-width: 46rem;
+    
+}
+
+
+
+
+.intro {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2.5rem;
+    padding: 3rem 0;
+}
+
+.texteEntreprise h2,
+.actualites h2 {
+    margin-top: 0;
+}
+
+.texteEntreprise p {
+    margin: 0 0 1rem;
+}
+
+.actualites {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.carteActu {
+    display: block;
+    background: #fff;
+    border: 1px solid var(--bordure);
+    border-radius: 4px;
+    overflow: hidden;
+    color: var(--texte);
+}
+
+.carteActu:hover {
+    border-color: var(--brunBois);
+    text-decoration: none;
+}
+
+.carteActu img {
+    height: 9rem;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carteActu .contenuActu {
+    padding: 0.9rem 1.1rem;
+}
+
+.carteActu h3 {
+    margin: 0 0 0.4rem;
+    font-size: 1.05rem;
+}
+
+.carteActu p {
+    margin: 0;
+    font-size: 0.92rem;
+    color: #574c3f;
+}
+
+
+
+.listeServices {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.8rem;
+}
+
+.ligneService {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    align-items: center;
+}
+
+.ligneService:nth-child(even) .texteService {
+    order: 2;
+}
+
+.ligneService:nth-child(even) .imageService {
+    order: 1;
+}
+
+.ligneService h2 {
+    margin-top: 0;
+    color: var(--brunFonce);
+}
+
+.ligneService img {
+    border-radius: 4px;
+    width: 100%;
+    height: 18rem;
+    object-fit: cover;
+}
+
+
+.galerie {
+    padding: 2.5rem 0 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.9rem;
+    background-color: #2a231c;
+    color: #e0d6c4;
+    text-align: center;
+}
+
+.miniature {
+    position: relative;
+    display: block;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.miniature img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.miniature:hover img {
+    transform: scale(1.06);
+}
+
+.titreMiniature {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 0.5rem 0.7rem;
+    background: linear-gradient(0deg, rgba(20, 14, 9, 0.85), rgba(20, 14, 9, 0));
+    color: var(--texteClair);
+    font-size: 0.85rem;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.miniature:hover .titreMiniature,
+.miniature:focus .titreMiniature {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+.blocContact {
+    padding: 3rem 0;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 3rem;
+}
+
+.formulaireContact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+    max-width: 32rem;
+}
+
+.champ {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.champDouble {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 1rem;
+}
+
+.champ label {
+    font-size: 0.92rem;
+    color: #574c3f;
+}
+
+.champ input,
+.champ textarea {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.6rem 0.7rem;
+    border: 1px solid var(--bordure);
+    border-radius: 3px;
+    background: #fff;
+    color: var(--texte);
+}
+
+.champ input:focus,
+.champ textarea:focGrad, votus {
+    outline: 2px solid var(--brunBois);
+    outline-offset: 1px;
+}
+
+.formulaireContact button {
+    align-self: flex-start;
+    padding: 0.75rem 1.8rem;
+    background: var(--vertMousse);
+    color: var(--texteClair);
+    border: none;
+    border-radius: 3px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.formulaireContact button:hover {
+    background: var(--vertMousseFonce);
+}
+
+.infosContact h2 {
+    margin-top: 0;
+}
+
+.infosContact ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+
+.bandeauCta {
+    background: var(--vertMousse);
+    color: var(--texteClair);
+}
+
+.bandeauCta .enveloppe {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1.4rem 0;
+}
+
+.bandeauCta p {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.boutonCta {
+    background: var(--creme);
+    color: var(--brunFonce);
+    padding: 0.7rem 1.5rem;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+.boutonCta:hover {
+    background: #fff;
+    text-decoration: none;
+}
+
+
+
+.piedDePage {
+    background: var(--creme2);
+    border-top: 1px solid var(--bordure);
+}
+
+.piedDePage .enveloppe {
+    padding: 2.2rem 0 1.6rem;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.piedDePage h3 {
+    margin: 0 0 0.7rem;
+    font-size: 0.95rem;
+    font-family: var(--policeTexte);
+    color: var(--brunFonce);
+}
+
+.piedDePage ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.reseauxSociaux {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.reseauxSociaux a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.1rem;
+    height: 2.1rem;
+    border-radius: 50%;
+    background: var(--brunFonce);
+}
+
+.reseauxSociaux a:hover {
+    background: var(--brunBois);
+}
+
+.reseauxSociaux svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    fill: var(--texteClair);
+}
+
+.copyright {
+    grid-column: 1 / -1;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--bordure);
+    font-size: 0.85rem;
+    color: #6b5e4d;
+}
+
+
+.detailActu {
+    padding: 3rem 0;
+    max-width: 42rem;
+}
+
+.detailActu h1 {
+    color: var(--brunFonce);
+}
+
+.detailActu p {
+    margin: 0 0 1.1rem;
+}
+
+.retourActu {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.form-container {
+    width: 400px;
+    margin: 30px auto;
+    padding: 20px;
+    background: #2a231c;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 10px;
+    background: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 800px) {
+    .intro,
+    .ligneService,
+    .blocContact,
+    .piedDePage .enveloppe {
+        grid-template-columns: 1fr;
+    }
+    .ligneService:nth-child(even) .texteService,
+    .ligneService:nth-child(even) .imageService {
+        order: initial;
+    }
+    .galerie {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .entete {
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+}
